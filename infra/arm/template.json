@@ -13,6 +13,20 @@
         "AppServicePlan_Name": {
             "defaultValue": "webinar-test-xx-asp",
             "type": "String"
+        },
+        "SqlDatabase_ServerName": {
+          "type": "string",
+          "defaultValue": "webinar-test-xx-rg"
+        },
+        "SqlDatabase_DatabaseName": {
+          "type": "string",
+          "defaultValue": "todo"
+        },
+        "SqlDatabase_AdminUsername": {
+          "type": "string"
+        },
+        "SqlDatabase_AdminPassword": {
+          "type": "secureString"
         }
     },
     "variables": {
@@ -200,6 +214,49 @@
                 "storageAccountRequired": false,
                 "keyVaultReferenceIdentity": "SystemAssigned"
             }
+        },
+        {
+          "type": "Microsoft.Sql/servers",
+          "apiVersion": "2022-05-01-preview",
+          "name": "[parameters('SqlDatabase_ServerName')]",
+          "location": "[resourceGroup().location]",
+          "kind": "v12.0",
+          "properties": {
+            "administratorLogin": "[parameters('SqlDatabase_AdminUsername')]",
+            "administratorLoginPassword": "[parameters('SqlDatabase_AdminPassword')]",
+            "version": "12.0",
+            "minimalTlsVersion": "1.2",
+            "publicNetworkAccess": "Enabled",
+            "restrictOutboundNetworkAccess": "Disabled"
+          }
+        },
+        {
+          "type": "Microsoft.Sql/servers/databases",
+          "apiVersion": "2022-05-01-preview",
+          "name": "[format('{0}/{1}', parameters('SqlDatabase_ServerName'), parameters('SqlDatabase_DatabaseName'))]",
+          "location": "[resourceGroup().location]",
+          "dependsOn": [
+            "[resourceId('Microsoft.Sql/servers', parameters('SqlDatabase_ServerName'))]"
+          ],
+          "sku": {
+            "name": "GP_S_Gen5",
+            "tier": "GeneralPurpose",
+            "family": "Gen5",
+            "capacity": 1
+          },
+          "kind": "v12.0,user,vcore,serverless",
+          "properties": {
+            "collation": "Latin1_General_100_CI_AI_SC_UTF8",
+            "maxSizeBytes": 34359738368,
+            "catalogCollation": "SQL_Latin1_General_CP1_CI_AS",
+            "zoneRedundant": false,
+            "readScale": "Disabled",
+            "autoPauseDelay": 60,
+            "requestedBackupStorageRedundancy": "Local",
+            "minCapacity": 0.5,
+            "isLedgerOn": false,
+            "availabilityZone": "NoPreference"
+          }
         }
     ]
 }
