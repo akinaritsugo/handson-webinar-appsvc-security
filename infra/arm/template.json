@@ -41,66 +41,6 @@
             }
         },
         {
-            "type": "Microsoft.Network/virtualNetworks/subnets",
-            "apiVersion": "2023-04-01",
-            "name": "[concat(parameters('VirtualNetwork_Name'), '/db-snet')]",
-            "dependsOn": [
-                "[resourceId('Microsoft.Network/virtualNetworks', parameters('VirtualNetwork_Name'))]",
-                "[resourceId('Microsoft.Network/networkSecurityGroups', variables('NSG_Db_Name'))]"
-            ],
-            "properties": {
-                "addressPrefixes": [
-                    "10.0.3.0/24"
-                ],
-                "networkSecurityGroup": {
-                    "id": "[resourceId('Microsoft.Network/networkSecurityGroups', variables('NSG_Db_Name'))]"
-                },
-                "delegations": [],
-                "privateEndpointNetworkPolicies": "Disabled",
-                "privateLinkServiceNetworkPolicies": "Enabled"
-            }
-        },
-        {
-            "type": "Microsoft.Network/virtualNetworks/subnets",
-            "apiVersion": "2023-04-01",
-            "name": "[concat(parameters('VirtualNetwork_Name'), '/gateway-snet')]",
-            "dependsOn": [
-                "[resourceId('Microsoft.Network/virtualNetworks', parameters('VirtualNetwork_Name'))]",
-                "[resourceId('Microsoft.Network/networkSecurityGroups', variables('NSG_Gwy_Name'))]"
-            ],
-            "properties": {
-                "addressPrefixes": [
-                    "10.0.1.0/24"
-                ],
-                "networkSecurityGroup": {
-                    "id": "[resourceId('Microsoft.Network/networkSecurityGroups', variables('NSG_Gwy_Name'))]"
-                },
-                "delegations": [],
-                "privateEndpointNetworkPolicies": "Disabled",
-                "privateLinkServiceNetworkPolicies": "Enabled"
-            }
-        },
-        {
-            "type": "Microsoft.Network/virtualNetworks/subnets",
-            "apiVersion": "2023-04-01",
-            "name": "[concat(parameters('VirtualNetwork_Name'), '/app-snet')]",
-            "dependsOn": [
-                "[resourceId('Microsoft.Network/virtualNetworks', parameters('VirtualNetwork_Name'))]",
-                "[resourceId('Microsoft.Network/networkSecurityGroups', variables('NSG_App_Name'))]"
-            ],
-            "properties": {
-                "addressPrefixes": [
-                    "10.0.2.0/24"
-                ],
-                "networkSecurityGroup": {
-                    "id": "[resourceId('Microsoft.Network/networkSecurityGroups', variables('NSG_App_Name'))]"
-                },
-                "delegations": [],
-                "privateEndpointNetworkPolicies": "Disabled",
-                "privateLinkServiceNetworkPolicies": "Enabled"
-            }
-        },
-        {
             "type": "Microsoft.Network/virtualNetworks",
             "apiVersion": "2023-04-01",
             "name": "[parameters('VirtualNetwork_Name')]",
