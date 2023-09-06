@@ -137,4 +137,4 @@ App Service の設定をキーコンテナー参照に変更
 
 # 次の Exercise へ
 
-* [SQL Database スキーマ作成](exercise02.md)
+* [マネージドIDを使った SQL DB 接続](exercise01.md)
