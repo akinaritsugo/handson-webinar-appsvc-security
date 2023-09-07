@@ -98,6 +98,8 @@ DROP USER [<APPSERVICE_NAME>];
 
 キーコンテナーに登録された接続文字列を、 Azure AD 認証を使った接続文字列に変更
 
+SQL Database への接続文字列の準備
+
 1. SQL Database を開き、 [設定]-[接続文字列] を開く
 
 1. 「ADO.NET (Active Directory passwordless authentication)」にある接続文字列を参考に以下のような接続文字列を作成、メモに控えておく
@@ -108,6 +110,7 @@ DROP USER [<APPSERVICE_NAME>];
     Server=tcp:<SQLSVR_NAME>.database.windows.net,1433;Initial Catalog=<SQLDB_NAME>; Encrypt=True; TrustServerCertificate=False; Connection Timeout=30; Authentication="Active Directory MSI";
     ```
 
+キーコンテナーへ接続文字列を設定
 
 1. キーコンテナーを開き、 [オブジェクト]-[シークレット] を開く
 
@@ -120,6 +123,8 @@ DROP USER [<APPSERVICE_NAME>];
     * シークレット値： (前手順であらかじめ取得しておいたパスレス認証の接続文字列)
 
 1. 新しいバージョンを開き、「シークレット識別子」をメモに控えておく
+
+App Service のキーコンテナー参照設定を修正
 
 1. App Service を開き、　[設定]-[構成] を開く
 
