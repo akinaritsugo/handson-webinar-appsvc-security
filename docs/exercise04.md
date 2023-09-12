@@ -2,7 +2,7 @@
 
 ## 【目次】
 
-![](images/ex01-0000-sqldb-create.png)
+![](images/ex04-0000-waf.png)
 
 1. [Front Door のデプロイ]()
 1. [動作確認]()

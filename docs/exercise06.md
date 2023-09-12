@@ -2,7 +2,7 @@
 
 ## 【目次】
 
-![](images/ex01-0000-sqldb-create.png)
+![](images/ex06-0000-defender.png)
 
 1. [Defender for Cloud の有効化](#defender-for-cloud-の有効化)
 1. [動作確認](#動作確認画面確認のみ)

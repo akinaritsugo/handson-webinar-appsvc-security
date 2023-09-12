@@ -2,7 +2,7 @@
 
 ## 【目次】
 
-![](images/ex01-0000-sqldb-create.png)
+![](images/ex02-0000-mngid.png)
 
 1. [SQL Database の認証設定変更](#sql-database-の認証設定変更)
 1. [SQL Database に対するアクセス権設定](#sql-database-に対するアクセス権設定)

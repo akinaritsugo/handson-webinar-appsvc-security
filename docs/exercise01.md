@@ -2,7 +2,7 @@
 
 ## 【目次】
 
-![](images/ex01-0000-sqldb-create.png)
+![](images/ex01-0000-constr.png)
 
 1. [AppServiceのマネージドIDを発行](#appserviceのマネージドidを発行)
 1. [キーコンテナーを作成](#キーコンテナーを作成)

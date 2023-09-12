@@ -2,7 +2,7 @@
 
 ## 【目次】
 
-![](images/ex01-0000-sqldb-create.png)
+![](images/ex05-0000-net.png)
 
 1. [アクセス元の制限]()
 1. [リダイレクト設定]()
