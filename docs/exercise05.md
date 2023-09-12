@@ -149,4 +149,4 @@
 
 # 次の Exercise へ
 
-* [WAFの配置](exercise04.md)
+* [Defender for Cloud の設定](exercise06.md)

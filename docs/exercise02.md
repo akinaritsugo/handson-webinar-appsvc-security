@@ -4,10 +4,10 @@
 
 ![](images/ex01-0000-sqldb-create.png)
 
-1. [SQL Database の認証設定変更]()
-1. [SQL Database に対するアクセス権設定]()
-1. [接続文字列の変更]()
-1. [動作確認]()
+1. [SQL Database の認証設定変更](#sql-database-の認証設定変更)
+1. [SQL Database に対するアクセス権設定](#sql-database-に対するアクセス権設定)
+1. [接続文字列の変更](#接続文字列の変更)
+1. [動作確認](#動作確認)
 
 
 ## SQL Database の認証設定変更
